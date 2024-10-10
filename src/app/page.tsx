@@ -1,95 +1,100 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import React from 'react';
+import Head from 'next/head'; // Import Head for script injection
+import Image from 'next/image';
+import styles from './page.module.scss';
+import LoadingOverlay from '@/components/LoadingOverlay';
+import clsx from 'clsx';
+import Link from 'next/link';
 
-export default function Home() {
+function Home() {
+  const [realEstateLoading, setRealEstateLoading] = React.useState(true);
+
+  const handleRealEstateLoadComplete = () => {
+    setRealEstateLoading(false);
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      {/* This script ensures overflow: hidden is applied immediately */}
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.body.style.overflow = 'hidden';`,
+          }}
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </Head>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <main className={styles[`homepage-container`]}>
+        {realEstateLoading && <LoadingOverlay isLoading={realEstateLoading} />}
+        <div className={styles.homepage}>
+          <section className={styles.heroSection}>
+            <Link href="https://www.coraxsolutions.com.mx/">
+              <div className={styles.heroContent}>
+                <h1 className={styles.heroTitle}>Real Estate</h1>
+                <h3 className={styles.heroSubTitle}>Browse Listing</h3>
+              </div>
+              <div className={styles.fullScreenContainer}>
+                <Image
+                  className={styles.image}
+                  src="/assets/realestate6.png"
+                  alt="Real Estate showing beach with blue smooth colors"
+                  onLoad={handleRealEstateLoadComplete}
+                  onError={handleRealEstateLoadComplete}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                />
+              </div>
+            </Link>
+          </section>
+
+          {/* Other card sections */}
+          <section className={styles.cardSection}>
+            <div className={clsx(styles.card)}>
+              <div className={styles.cardOverlay}>
+                <h2 className={styles.cardTitle}>Lifestyle</h2>
+                <button className={styles.heroButton}>Explore the Restaurants</button>
+              </div>
+              <Image
+                src="/assets/lifestyle3.png"
+                alt="Lifestyle"
+                layout="responsive"
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className={clsx(styles.card)}>
+              <div className={styles.cardOverlay}>
+                <h2 className={styles.cardTitle}>Travel</h2>
+                <button className={styles.heroButton}>Explore Unique Places</button>
+              </div>
+              <Image
+                src="/assets/travel3.png"
+                alt="Travel"
+                layout="responsive"
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className={clsx(styles.card)}>
+              <div className={styles.cardOverlay}>
+                <h2 className={styles.cardTitle}>Boutique</h2>
+                <button className={styles.heroButton}>Shop Now</button>
+              </div>
+              <Image
+                src="/assets/boutique3.png"
+                alt="Boutique"
+                layout="responsive"
+                width={600}
+                height={400}
+              />
+            </div>
+          </section>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
+
+export default Home;

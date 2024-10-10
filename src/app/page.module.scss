@@ -1,0 +1,166 @@
+// Original drop shadow
+$original-shadow: 0 19px 35px rgba(0, 0, 0, 0.5);
+
+// Variations
+$light-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); // Softer shadow
+$strong-shadow: 0 25px 40px rgba(0, 0, 0, 0.7); // More intense shadow
+
+.homepage {
+  &-container {
+  }
+
+  .heroSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden; // Prevents overflow of the image
+    // height: 550px; // Set a height for the section
+    a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .fullScreenContainer {
+        position: relative; /* Create a positioning context for the child Image */
+        width: 100%; /* Full width of the container */
+        height: 100vh; /* Full height of the viewport */
+        overflow: hidden; /* Prevents overflow */
+
+        // @media (min-width: 1441px) and (min-width: 1441px) {
+        //   width: 1920px;
+        //   height: 1080px;
+        // }
+        .image {
+        }
+      }
+
+      .heroContent {
+        position: absolute; // Position it absolutely to the heroSection
+        z-index: 2; // Ensure it appears above the image
+        padding: 20px; // Add some padding if needed
+        // max-width: 600px; // Limit the width of the content
+        text-align: center;
+        margin-top: 75px;
+
+        // Optional: Additional styling for the title and button
+        .heroTitle {
+          transform: scaleY(1.05);
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 6rem; // Adjust the size as needed
+          margin-bottom: 0.2rem; // Space below the title
+          text-shadow: 2px 2px 4px rgba(111, 171, 168, 0.4), 0 0 25px rgba(111, 171, 168, 0.4);
+        }
+
+        .heroSubTitle {
+          color: #fff;
+          font-size: 3rem; // Adjust the size as needed
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+            // Horizontal offset, vertical offset, blur radius, color
+            0 0 25px rgba(0, 0, 0, 0.35); // Additional shadow for a glowing effect
+          letter-spacing: 5px;
+        }
+
+        .heroButton {
+          font-size: 0.9rem;
+          padding: 12px 75px; // Add padding to the button
+          background-color: rgba(0, 0, 0, 0.35); // Button background color
+          border: 1px solid #fff;
+          color: white; // Button text color
+          border-radius: 2px; // Round the button corners
+          cursor: pointer; // Change cursor on hover
+          transition: background-color 0.2s; // Smooth background transition
+
+          backdrop-filter: blur(10px);
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.6); // Darken on hover
+          }
+        }
+      }
+    }
+  }
+  /* Cards Section */
+  .cardSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Default to 3 columns
+    gap: 20px;
+    padding: 15px 30px;
+
+    @media (max-width: 1015px) {
+      // If the width is below 1015px, show 1 column
+      grid-template-columns: 1fr; // 1 column on smaller screens
+    }
+
+    @media (min-width: 1016px) and (max-width: 1920px) {
+      grid-template-columns: repeat(3, 1fr); // 3 columns on larger screens
+    }
+  }
+
+  .card {
+    position: relative;
+    height: auto; // Allow height to be determined by content and image aspect ratio
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 5px 8px 15px 0px rgb(86, 128, 148);
+  }
+
+  .cardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // background: rgba(0, 0, 0, 0.2); // Optional: background for contrast
+  }
+
+  .cardTitle {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .heroButton {
+    font-size: 0.9rem;
+    padding: 12px 30px; // Adjust padding for a better appearance
+    background-color: rgba(0, 0, 0, 0.7); // Button background color
+    border: none; // Remove border
+    color: white; // Button text color
+    border-radius: 2px; // Round the button corners
+    cursor: pointer; // Change cursor on hover
+    transition: background-color 0.2s; // Smooth background transition
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.9); // Darken on hover
+    }
+  }
+
+  .heroButton {
+    font-size: 0.9rem;
+    padding: 12px 75px; // Add padding to the button
+    background-color: rgba(0, 0, 0, 0.35); // Button background color
+    border: 1px solid #fff;
+    color: white; // Button text color
+    border-radius: 2px; // Round the button corners
+    cursor: pointer; // Change cursor on hover
+    transition: background-color 0.2s; // Smooth background transition
+
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6); // Darken on hover
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.footer {
+  background-color: #f5f7f9;
+  padding: 40px 20px;
+  //   border-top: 1px solid #e0e0e0;
+  color: #000;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.logoSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.linksSection {
+  display: flex;
+  gap: 40px;
+}
+
+.linksSection h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.linksSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksSection li {
+  margin-bottom: 8px;
+}
+
+.languageSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.languageSection select {
+  margin-top: 8px;
+  padding: 4px;
+  font-size: 16px;
+}
+
+.socialIcons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.socialIcons li {
+  margin-right: 25px;
+}
+
+.socialIcons img {
+  width: 31px;
+  height: 30px;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.legalLinks,
+.helpLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.legalLinks li,
+.helpLinks li {
+  margin: 0;
+}

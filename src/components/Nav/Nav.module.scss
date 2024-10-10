@@ -1,0 +1,108 @@
+.wrapper {
+  user-select: none;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  padding-top: 15px;
+
+  .container {
+    width: 100%;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 10px 20px;
+    text-transform: uppercase;
+
+    margin-right: 100px;
+
+    .hamburger {
+      display: none; // Hide by default
+      flex-direction: column;
+      cursor: pointer;
+
+      .line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.3s;
+
+        &.open {
+          transform: rotate(45deg);
+          &:nth-child(2) {
+            opacity: 0; // Hide the middle line
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        display: none; // Hide menu by default on smaller screens
+        flex-direction: column; // Stack links vertically
+        position: absolute;
+        top: 60px; // Position below the navbar
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8); // Background for dropdown
+        padding: 20px 0;
+        transition: max-height 0.3s ease;
+        max-height: 0; // Collapse by default
+        overflow: hidden;
+
+        &.open {
+          display: flex; // Show on toggle
+          max-height: 500px; // Give it a max height when open
+        }
+      }
+    }
+
+    .link {
+      margin: 0 30px; /* Margin for links */
+      text-decoration: none;
+      color: #fff; /* Link color */
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      @media (max-width: 768px) {
+        margin: 10px 0; /* Margin for links in mobile */
+      }
+    }
+
+    .button {
+      margin-left: auto;
+      padding: 10px 30px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      background: transparent;
+      border: 2px solid rgb(203, 177, 156);
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem; /* Decrease button font size */
+        padding: 8px 25px; /* Decrease button padding */
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex; // Show hamburger on small screens
+    }
+
+    .menu {
+      display: none; // Hide menu by default on smaller screens
+    }
+  }
+}
