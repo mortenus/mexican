@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 
 import styles from './Footer.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = memo(() => {
   return (
@@ -8,10 +10,16 @@ const Footer = memo(() => {
       <div className={styles.footerTop}>
         {/* Logo and Name */}
         <div className={styles.logoSection}>
-          <img src="/path-to-your-logo.png" alt="Logo" className={styles.logo} />
-          <span className={styles.brandName}>
+          <Image
+            src="/assets/logo.png"
+            width={266}
+            height={262}
+            alt="Logo"
+            className={styles.logo}
+          />
+          {/* <span className={styles.brandName}>
             Mexican <span className={styles.highlight}>Best Life</span>
-          </span>
+          </span> */}
         </div>
 
         {/* Links Section */}
@@ -19,22 +27,28 @@ const Footer = memo(() => {
           <div>
             <h4>BOUTIQUES</h4>
             <ul>
-              <li>Links</li>
-              <li>Links</li>
+              <Link href="https://www.coraxsolutions.com.mx/renta-condo-vacacional">
+                <li>Explore</li>
+              </Link>
             </ul>
           </div>
           <div>
             <h4>REAL ESTATE</h4>
             <ul>
-              <li>Links</li>
-              <li>Links</li>
+              <Link href="https://www.coraxsolutions.com.mx/renta-condo-vacacional">
+                <li>Rental</li>
+              </Link>
+              <Link href="https://www.coraxsolutions.com.mx/propiedades">
+                <li>Properties for Sale</li>
+              </Link>
             </ul>
           </div>
           <div>
             <h4>LIFESTYLE</h4>
             <ul>
-              <li>Links</li>
-              <li>Links</li>
+              <Link href="">
+                <li>Discover</li>
+              </Link>
             </ul>
           </div>
         </div>

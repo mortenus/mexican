@@ -54,7 +54,7 @@ function Home() {
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Lifestyle</h2>
-                <button className={styles.heroButton}>Explore the Restaurants</button>
+                <button className={styles.heroButton}>Discover</button>
               </div>
               <Image
                 src="/assets/lifestyle3.png"
@@ -67,7 +67,7 @@ function Home() {
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Travel</h2>
-                <button className={styles.heroButton}>Explore Unique Places</button>
+                <button className={styles.heroButton}>Explore</button>
               </div>
               <Image
                 src="/assets/travel3.png"
@@ -80,7 +80,7 @@ function Home() {
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Boutique</h2>
-                <button className={styles.heroButton}>Shop Now</button>
+                <button className={styles.heroButton}>Acquire</button>
               </div>
               <Image
                 src="/assets/boutique3.png"
