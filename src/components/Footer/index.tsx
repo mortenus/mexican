@@ -52,13 +52,13 @@ const Footer = memo(() => {
 
         {/* Language and Social Section */}
         <div className={styles.additionSection}>
-          <div className={styles.languageSection}>
+          {/* <div className={styles.languageSection}>
             <h4>LANGUAGE</h4>
             <select>
               <option>English</option>
               <option>Spanish</option>
             </select>
-          </div>
+          </div> */}
           <ul className={styles.socialIcons}>
             <li>
               <a href="#">
