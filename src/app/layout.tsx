@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta charSet="UTF-8" />
         <title>Mexican Best Life</title>
         <meta property="og:title" content="Mexican Best Life" />
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-      </Head>
+      </head>
 
       <body>
         <Nav setIsNavOpen={setIsNavOpen} />
