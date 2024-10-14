@@ -54,7 +54,8 @@ function Home() {
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Lifestyle</h2>
-                <button className={styles.heroButton}>Discover</button>
+                <h4 className={styles.cardSubtitle}>Discover</h4>
+                {/* <button className={styles.heroButton}>Discover</button> */}
               </div>
               <Image
                 src="/assets/lifestyle3.png"
@@ -63,11 +64,13 @@ function Home() {
                 width={600}
                 height={400}
               />
+              <Link href="/" passHref />
             </div>
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Travel</h2>
-                <button className={styles.heroButton}>Explore</button>
+                <h4 className={styles.cardSubtitle}>Explore</h4>
+                {/* <button className={styles.heroButton}>Explore</button> */}
               </div>
               <Image
                 src="/assets/travel3.png"
@@ -76,11 +79,13 @@ function Home() {
                 width={600}
                 height={400}
               />
+              <Link href="/" passHref />
             </div>
             <div className={clsx(styles.card)}>
               <div className={styles.cardOverlay}>
                 <h2 className={styles.cardTitle}>Boutique</h2>
-                <button className={styles.heroButton}>Acquire</button>
+                <h4 className={styles.cardSubtitle}>Acquire</h4>
+                {/* <button className={styles.heroButton}>Acquire</button> */}
               </div>
               <Image
                 src="/assets/boutique3.png"
@@ -89,6 +94,7 @@ function Home() {
                 width={600}
                 height={400}
               />
+              <Link href="/" passHref />
             </div>
           </section>
         </div>
