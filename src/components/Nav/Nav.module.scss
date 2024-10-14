@@ -47,7 +47,7 @@
       display: flex;
       align-items: center;
 
-      @media (max-width: 768px) {
+      @media (max-width: 1280px) {
         display: none; // Hide menu by default on smaller screens
         flex-direction: column; // Stack links vertically
         position: absolute;

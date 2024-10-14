@@ -1,8 +1,11 @@
 .footer {
   background-color: #fff;
   padding: 40px 50px;
-  //   border-top: 1px solid #e0e0e0;
   color: #000;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }
 
 .footerTop {
@@ -10,28 +13,53 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 .logoSection {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .logo {
-  width: 50%;
+  width: 100%;
+  max-width: 150px;
   height: auto;
+
+  @media (min-width: 769px) {
+    width: 50%;
+  }
 }
 
 .linksSection {
   display: flex;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    text-align: center;
+  }
 }
 
 .linksSection h4 {
   font-size: 16px;
   margin-bottom: 10px;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .linksSection ul {
@@ -40,12 +68,16 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 }
 
 .linksSection li {
   display: inline-block;
   margin-bottom: 8px;
-
   border-bottom: 1px solid transparent;
 
   &:hover {
@@ -53,24 +85,39 @@
   }
 }
 
-.languageSection {
+.additionSection {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 }
 
-.languageSection select {
-  margin-top: 8px;
-  padding: 4px;
-  font-size: 16px;
+.languageSection {
+  width: 100%;
+
+  select {
+    margin-top: 8px;
+    padding: 4px;
+    font-size: 16px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
 }
 
 .socialIcons {
   display: flex;
   margin-top: 20px;
-}
+  gap: 20px;
 
-.socialIcons li {
-  margin-right: 25px;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .socialIcons img {
@@ -87,6 +134,12 @@
   padding-top: 20px;
   font-size: 14px;
   color: #666;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
 }
 
 .legalLinks,
@@ -94,9 +147,8 @@
   list-style: none;
   display: flex;
   gap: 20px;
-}
 
-.legalLinks li,
-.helpLinks li {
-  margin: 0;
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 }

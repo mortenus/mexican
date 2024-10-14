@@ -17,9 +17,6 @@ const Footer = memo(() => {
             alt="Logo"
             className={styles.logo}
           />
-          {/* <span className={styles.brandName}>
-            Mexican <span className={styles.highlight}>Best Life</span>
-          </span> */}
         </div>
 
         {/* Links Section */}
@@ -54,12 +51,14 @@ const Footer = memo(() => {
         </div>
 
         {/* Language and Social Section */}
-        <div className={styles.languageSection}>
-          <h4>LANGUAGE</h4>
-          <select>
-            <option>English</option>
-            <option>Spanish</option>
-          </select>
+        <div className={styles.additionSection}>
+          <div className={styles.languageSection}>
+            <h4>LANGUAGE</h4>
+            <select>
+              <option>English</option>
+              <option>Spanish</option>
+            </select>
+          </div>
           <ul className={styles.socialIcons}>
             <li>
               <a href="#">
