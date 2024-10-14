@@ -1,43 +1,35 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, memo } from 'react';
 import clsx from 'clsx';
 import styles from './Nav.module.scss';
 import Link from 'next/link';
 
-const Nav = memo(() => {
+type TNav = {
+  setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Nav = memo(({ setIsNavOpen }: TNav) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
+    setIsNavOpen((prev: boolean) => !prev); // Update parent state
   };
 
   const closeMenu = () => {
     setIsOpen(false);
+    setIsNavOpen(false); // Update parent state
   };
-
-  // Disable scrolling when the menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto'; // Reset on component unmount
-    };
-  }, [isOpen]);
 
   return (
     <nav className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.nav}>
-          {/* Hamburger menu */}
           <div className={clsx(styles.hamburger, { [styles.open]: isOpen })} onClick={toggleMenu}>
             <div className={styles.line} />
             <div className={styles.line} />
             <div className={styles.line} />
           </div>
 
-          {/* Menu links */}
           <div className={clsx(styles.menu, { [styles.open]: isOpen })}>
             <Link href="/" className={styles.link} onClick={closeMenu}>
               Home

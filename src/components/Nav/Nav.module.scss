@@ -2,7 +2,7 @@
   user-select: none;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 9999;
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -79,12 +79,15 @@
           display: flex;
           opacity: 1; /* Fade in */
           pointer-events: auto; /* Allow interactions when open */
+          overflow-x: hidden;
+          overflow-y: scroll;
+          transition-delay: 0ms;
         }
       }
     }
 
     .link {
-      margin: 15px 0;
+      margin: 10px 20px;
       text-decoration: none;
       color: #fff;
       font-size: 1.5rem; /* Larger font size for better visibility */
@@ -102,7 +105,6 @@
     }
 
     .button {
-      margin-top: 20px;
       padding: 12px 30px;
       font-size: 1.2rem;
       color: #fff;
