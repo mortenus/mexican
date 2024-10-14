@@ -4,7 +4,6 @@ import Nav from '@/components/Nav';
 
 import '../styles/globals.scss';
 import Footer from '@/components/Footer';
-import Head from 'next/head';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
